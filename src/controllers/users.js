@@ -3,9 +3,9 @@ const { knex } = require('../configs/dbConection');
 
 const generateQrcode = async (id) => {
   try {
-    const user = await knex('users').where({ id }).first();
+    const user = await knex('users').where('id', id).first();
     const formatedName = user.name.replace(/\s+/g, '').toLowerCase();
-    const url = `http://localhost:3000/${id}/${formatedName}`;
+    const url = `${process.env.BASE_URL}${id}/${formatedName}`;
     const qrcode = qr.image(url, { type: 'svg' });
 
     return new Promise((resolve, reject) => {
@@ -31,7 +31,7 @@ const registerUser = async (req, res) => {
         github,
       })
       .returning('*');
-
+      
     const { id } = registeredUser;
     const qrcodeBuffer = await generateQrcode(id);
     const qrcodeBase64 = qrcodeBuffer.toString('base64');
