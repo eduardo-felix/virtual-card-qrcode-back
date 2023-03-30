@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "knex": "^2.4.2",
+    "pg": "^8.10.0",
+    "qr-image": "^3.2.0"
+  },
+  "name": "virtual-card-qrcode-back",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardo-felix/virtual-card-qrcode-back.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduardo-felix/virtual-card-qrcode-back/issues"
+  },
+  "homepage": "https://github.com/eduardo-felix/virtual-card-qrcode-back#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
