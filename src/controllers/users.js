@@ -45,7 +45,7 @@ const registerUser = async (req, res) => {
   
 
 const getUser = async (req, res) =>{
-    const { name, id } = req.params;
+    const { id } = req.params;
 
     try {
         const userFound = await knex('users').select('*').where('id', id).first()
